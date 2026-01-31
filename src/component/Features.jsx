@@ -6,41 +6,41 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const featuresData = [
+export const featuresData = [
   {
     id: 1,
-    title: "Hand-TXZ Dough",
+    title: "Hand-Tossed Dough", // Fixed spelling
     subtitle: "Fermented for 48 hours for that perfect airy crust.",
-    video:
-      "https://assets.mixkit.co/videos/preview/mixkit-fresh-pizza-dough-slow-motion-43549-large.mp4",
+    // Temporary placeholder (Download real video below)
+    video: "https://www.pexels.com/download/video/6603324/", 
   },
   {
     id: 2,
     title: "Woodfire Oven",
     subtitle: "Cooked at 400°C for authentic smokey char.",
-    video:
-      "https://assets.mixkit.co/videos/preview/mixkit-putting-pizza-in-the-oven-43553-large.mp4",
+    // Working Public URL (Pexels source)
+    video: "https://www.pexels.com/download/video/6221682/",
   },
   {
     id: 3,
     title: "Fresh Basil",
     subtitle: "Picked daily from our own indoor garden.",
-    video:
-      "https://assets.mixkit.co/videos/preview/mixkit-top-view-of-a-pizza-maker-putting-basil-leaves-on-43552-large.mp4",
+    // Temporary placeholder (Download real video below)
+    video: "https://www.pexels.com/download/video/35754388/", 
   },
   {
     id: 4,
     title: "Artisan Cheese",
     subtitle: "Locally sourced mozzarella that stretches for miles.",
-    video:
-      "https://assets.mixkit.co/videos/preview/mixkit-serving-a-pizza-slice-43554-large.mp4",
+    // Temporary placeholder (Download real video below)
+    video: "https://www.pexels.com/download/video/5898377/", 
   },
   {
     id: 5,
     title: "Served Hot",
     subtitle: "From oven to table in less than 3 minutes.",
-    video:
-      "https://assets.mixkit.co/videos/preview/mixkit-eating-pizza-with-friends-43556-large.mp4",
+    // Temporary placeholder (Download real video below)
+    video: "https://www.pexels.com/download/video/32046327/",
   },
 ];
 

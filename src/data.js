@@ -2,10 +2,10 @@
 
 export const galleryImages = [
     // You can easily add more image URLs here
-    { id: 1, src: "/images/pizza-oven.jpg", alt: "Woodfire Oven" },
-    { id: 2, src: "/images/dough-toss.jpg", alt: "Chef tossing dough" },
-    { id: 3, src: "/images/cafe-interior.jpg", alt: "Cafe Ambience" },
-    { id: 4, src: "/images/pizza-close.jpg", alt: "Cheese Pull" },
+    { id: 1, src: "https://images.pexels.com/photos/18126737/pexels-photo-18126737.jpeg", alt: "Woodfire Oven" },
+    { id: 2, src: "https://images.pexels.com/photos/1028434/pexels-photo-1028434.jpeg", alt: "Chef tossing dough" },
+    { id: 3, src: "https://lh3.googleusercontent.com/gps-cs-s/AHVAweqXRPPzhQuSa7rd5pUn2A-WVtSxZOGeGSpoz-N0j9kwQXq0m2_PcksCx-mlqIr0D_VB5y58ecqwKtV_6U0npwUCPsyiQ6fAHmEUq4LCo7YneIeAgwcvtoxyrOLfNAde0JIgNMLL4tEZT1pT=s1360-w1360-h1020-rw", alt: "Cafe Ambience" },
+    { id: 4, src: "https://images.pexels.com/photos/35800156/pexels-photo-35800156.jpeg", alt: "Cheese Pull" },
 ];
 
 export const menuData = [

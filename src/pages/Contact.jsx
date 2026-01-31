@@ -89,21 +89,8 @@ export default function Contact() {
             loading="lazy"
             allowFullScreen
             referrerPolicy="no-referrer-when-downgrade"
-            src={`https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=TIME+FOR+WOODFIRE,Midnapore,West+Bengal`}
+            src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3687.9718308826073!2d87.32033671105658!3d22.430086038093137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1d5b5e58f89bdf%3A0x9b2b09180e0b78fc!2sTIME%20FOR%20WOODFIRE!5e0!3m2!1sen!2sin!4v1769879911263!5m2!1sen!2sin`}
           ></iframe>
-          {/* NOTE: To make the map appear, you need a Google Maps API Key. 
-              If you don't have one yet, you can use this standard iframe link temporarily:
-           */}
-          {/* <iframe 
-             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.5!2d87.32!3d22.43!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDI1JzQ4LjMiTiA4N8KwMTknMjIuNSJF!5e0!3m2!1sen!2sin!4v1600000000000!5m2!1sen!2sin" 
-             width="100%" 
-             height="100%" 
-             style={{ border: 0 }} 
-             allowFullScreen="" 
-             loading="lazy"
-             referrerPolicy="no-referrer-when-downgrade">
-           </iframe>
-           */}
         </motion.div>
       </div>
     </div>

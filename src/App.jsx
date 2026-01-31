@@ -4,9 +4,11 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 import Lenis from "lenis";
 
+
 // Import Components
 import Navbar from "./component/Navbar";
-import Footer from "./component/Footer"; // Import the new footer
+import Footer from "./component/Footer"; 
+import ScrollToTop from "./component/ScrollToTop";
 
 // Import Pages
 import Home from "./pages/Home";
@@ -27,6 +29,7 @@ export default function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <div className="bg-black min-h-screen text-white flex flex-col font-sans">
         <Navbar />
 

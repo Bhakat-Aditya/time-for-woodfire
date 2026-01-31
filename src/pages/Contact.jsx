@@ -51,7 +51,7 @@ export default function Contact() {
               <Phone className="w-6 h-6 text-orange-500 mt-1" />
               <div>
                 <h3 className="text-xl font-bold">Contact</h3>
-                <p className="text-zinc-400">+91 12345 67890</p>{" "}
+                <p className="text-zinc-400">+91 62970 04033</p>{" "}
                 {/* Update with real number */}
                 <p className="text-sm text-zinc-500">
                   Call for reservations or takeout

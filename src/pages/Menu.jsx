@@ -1,100 +1,124 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { menuData } from "../data"; // Import the array we made in step 1
+// src/pages/Menu.jsx
+import React, { useRef } from "react";
+import { menuData } from "../data"; // Assuming your data is here
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
-const MenuItem = ({ item, isFixed }) => (
-  <div className="flex justify-between items-start py-4 border-b border-zinc-800 hover:bg-zinc-900/50 transition-colors p-2 rounded-lg">
-    <div className="flex-1 pr-4">
-      <h4 className="text-xl font-bold text-orange-100">{item.name}</h4>
-      <p className="text-sm text-zinc-400 mt-1">{item.desc}</p>
-    </div>
-    <div className="text-right whitespace-nowrap">
-      {isFixed ? (
-        <span className="text-lg font-mono text-orange-400">₹{item.price}</span>
-      ) : (
-        // Wait, wait, let's look at your image.
-        // R = Regular, M = Medium.
-        // Usually Regular is 7-8 inch, Medium is 10-12 inch.
-        <div className="flex gap-4">
-          <div className="flex flex-col items-center">
-            <span className="text-xs text-zinc-500 uppercase">Reg</span>
-            <span className="text-lg font-mono text-white">
-              ₹{item.priceR || "Check Cat"}
-            </span>
-          </div>
-          <div className="flex flex-col items-center">
-            <span className="text-xs text-zinc-500 uppercase">Med</span>
-            <span className="text-lg font-mono text-orange-400">
-              ₹{item.priceM || "Check Cat"}
-            </span>
-          </div>
-        </div>
-      )}
-    </div>
-  </div>
-);
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Menu() {
+  const container = useRef(null);
+
+  useGSAP(
+    () => {
+      const items = gsap.utils.toArray(".menu-item");
+
+      items.forEach((item) => {
+        // --- 1. ENTERING (Grow from 50% to 100%) ---
+        // From bottom of screen up to the Center
+        gsap.fromTo(
+          item,
+          {
+            scale: 0.5,
+            opacity: 0.3, // Lower opacity for better contrast
+            filter: "blur(4px)", // Add blur for depth
+          },
+          {
+            scale: 1,
+            opacity: 1,
+            filter: "blur(0px)",
+            ease: "power2.out", // Smooth easing
+            scrollTrigger: {
+              trigger: item,
+              start: "top 90%", // Start growing when top hits bottom area
+              end: "center center", // Full size when it hits exact center
+              scrub: 1, // '1' adds a 1-second lag for "buttery" feel
+            },
+          },
+        );
+
+        // --- 2. LEAVING (Shrink from 100% back to 50%) ---
+        // From Center up to the Top of screen
+        gsap.fromTo(
+          item,
+          {
+            scale: 1,
+            opacity: 1,
+            filter: "blur(0px)",
+          },
+          {
+            scale: 0.5,
+            opacity: 0.3,
+            filter: "blur(4px)",
+            ease: "power2.in",
+            scrollTrigger: {
+              trigger: item,
+              start: "center center", // Start shrinking from center
+              end: "bottom 10%", // Fully small when bottom hits top area
+              scrub: 1, // Consistent smooth lag
+              immediateRender: false, // Important to prevent conflict with first tween
+            },
+          },
+        );
+      });
+    },
+    { scope: container },
+  );
+
   return (
-    <div className="min-h-screen pt-24 px-4 pb-20 bg-black">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-5xl md:text-6xl font-black text-center text-orange-500 mb-12 tracking-tighter">
-          OUR MENU
+    <div ref={container} className="bg-black min-h-screen w-full text-white">
+      {/* Spacer to allow first item to reach center */}
+      <div className="h-[40vh]" />
+
+      <div className="max-w-2xl mx-auto flex flex-col items-center gap-12 pb-40">
+        {/* Title (Optional) */}
+        <h1 className="fixed top-10 left-0 w-full text-center text-zinc-700 font-bold tracking-[1em] uppercase z-50 pointer-events-none mix-blend-difference">
+          Menu Selection
         </h1>
 
-        {menuData.map((category, index) => (
-          <motion.div
-            key={index}
-            initial={{ y: 20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1 }}
-            className="mb-16"
-          >
-            <div className="flex justify-between items-end mb-6 border-b-2 border-orange-600 pb-2">
-              <h2 className="text-3xl font-bold text-white uppercase">
-                {category.category}
-              </h2>
-              {!category.isFixedPrice && (
-                <div className="text-right">
-                  <div className="flex gap-4 text-xl font-bold font-mono">
-                    <span className="text-white">
-                      R: ₹{category.priceRegular}
-                    </span>
-                    <span className="text-orange-500">
-                      M: ₹{category.priceMedium}
-                    </span>
-                  </div>
-                </div>
-              )}
-            </div>
+        {menuData.map((category, catIndex) => (
+          <React.Fragment key={catIndex}>
+            {/* Render Category Header as an item too, or keep it static? 
+                Let's make items the focus. */}
 
-            <div className="grid gap-2">
-              {category.items.map((item, idx) => (
-                <div
-                  key={idx}
-                  className="flex justify-between items-start py-3 border-b border-zinc-900/50"
-                >
-                  <div>
-                    <h3 className="text-lg font-medium text-zinc-200">
-                      {item.name}
-                    </h3>
-                    {item.desc && (
-                      <p className="text-sm text-zinc-500">{item.desc}</p>
-                    )}
+            {category.items.map((item, index) => (
+              <div
+                key={`${catIndex}-${index}`}
+                className="menu-item w-full flex flex-col items-center justify-center p-8 border border-zinc-800 bg-zinc-900/50 rounded-3xl backdrop-blur-sm"
+                // Using transform-gpu forces hardware acceleration for smoothness
+                style={{ willChange: "transform, opacity, filter" }}
+              >
+                {/* Visual Content */}
+                <div className="text-center space-y-4">
+                  <div className="text-orange-500 font-mono text-xs tracking-widest uppercase">
+                    {category.category} No.{" "}
+                    {(index + 1).toString().padStart(2, "0")}
                   </div>
-                  {/* If item has individual price override, show it, otherwise it follows category price */}
-                  {category.isFixedPrice && (
-                    <span className="font-mono text-orange-400">
-                      ₹{item.price}
+
+                  <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-none">
+                    {item.name}
+                  </h2>
+
+                  <p className="text-zinc-400 font-light max-w-md mx-auto">
+                    {item.desc ||
+                      "A delicious culinary masterpiece made with fresh ingredients."}
+                  </p>
+
+                  <div className="pt-4">
+                    <span className="text-3xl font-mono font-bold text-white">
+                      ₹{item.price || category.priceRegular}
                     </span>
-                  )}
+                  </div>
                 </div>
-              ))}
-            </div>
-          </motion.div>
+              </div>
+            ))}
+          </React.Fragment>
         ))}
       </div>
+
+      {/* Spacer to allow last item to reach center */}
+      <div className="h-[40vh]" />
     </div>
   );
 }

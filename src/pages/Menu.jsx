@@ -15,14 +15,15 @@ export default function Menu() {
       const items = gsap.utils.toArray(".menu-item");
 
       items.forEach((item) => {
-        // 1. Entrance (The "Lighting Up" Phase)
+        // 1. Entrance ONLY (Coming from Bottom -> Center)
+        // We removed the Exit animation so items stay visible at the top.
         gsap.fromTo(
           item,
           {
-            scale: 0.8,
-            opacity: 0.2,
-            filter: "brightness(0.5) blur(6px)",
-            y: 60,
+            scale: 1,
+            opacity: 1,
+            filter: "",
+            y: 0,
           },
           {
             scale: 1, // On mobile, we stop at scale 1 to prevent overflow
@@ -38,21 +39,6 @@ export default function Menu() {
             },
           },
         );
-
-        // 2. Exit (The "Fade to Black" Phase)
-        gsap.to(item, {
-          scale: 0.8,
-          opacity: 0.2,
-          filter: "brightness(0.5) blur(6px)",
-          y: -60,
-          ease: "power3.in",
-          scrollTrigger: {
-            trigger: item,
-            start: "center 45%",
-            end: "bottom 0%",
-            scrub: 1,
-          },
-        });
       });
     },
     { scope: container },

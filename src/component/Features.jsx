@@ -4,6 +4,12 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
+import video1 from '../assets/1.webm';
+import video2 from '../assets/2.webm';
+import video3 from '../assets/3.webm';
+import video4 from '../assets/4.webm';
+import video5 from '../assets/5.webm';
+
 gsap.registerPlugin(ScrollTrigger);
 
 export const featuresData = [
@@ -12,35 +18,35 @@ export const featuresData = [
     title: "Hand-Tossed Dough", // Fixed spelling
     subtitle: "Fermented for 48 hours for that perfect airy crust.",
     // Temporary placeholder (Download real video below)
-    video: "https://www.pexels.com/download/video/6603324/", 
+    video: video1, 
   },
   {
     id: 2,
     title: "Woodfire Oven",
     subtitle: "Cooked at 400°C for authentic smokey char.",
     // Working Public URL (Pexels source)
-    video: "https://www.pexels.com/download/video/6221682/",
+    video: video2,
   },
   {
     id: 3,
     title: "Fresh Basil",
     subtitle: "Picked daily from our own indoor garden.",
     // Temporary placeholder (Download real video below)
-    video: "https://www.pexels.com/download/video/35754388/", 
+    video: video3, 
   },
   {
     id: 4,
     title: "Artisan Cheese",
     subtitle: "Locally sourced mozzarella that stretches for miles.",
     // Temporary placeholder (Download real video below)
-    video: "https://www.pexels.com/download/video/5898377/", 
+    video: video4, 
   },
   {
     id: 5,
     title: "Served Hot",
     subtitle: "From oven to table in less than 3 minutes.",
     // Temporary placeholder (Download real video below)
-    video: "https://www.pexels.com/download/video/32046327/",
+    video: video5,
   },
 ];
 

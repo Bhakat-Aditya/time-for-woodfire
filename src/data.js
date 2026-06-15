@@ -6,6 +6,16 @@ export const galleryImages = [
     { id: 2, src: "https://images.pexels.com/photos/1028434/pexels-photo-1028434.jpeg", alt: "Chef tossing dough" },
     { id: 3, src: "https://lh3.googleusercontent.com/gps-cs-s/AHVAweqXRPPzhQuSa7rd5pUn2A-WVtSxZOGeGSpoz-N0j9kwQXq0m2_PcksCx-mlqIr0D_VB5y58ecqwKtV_6U0npwUCPsyiQ6fAHmEUq4LCo7YneIeAgwcvtoxyrOLfNAde0JIgNMLL4tEZT1pT=s1360-w1360-h1020-rw", alt: "Cafe Ambience" },
     { id: 4, src: "https://images.pexels.com/photos/35800156/pexels-photo-35800156.jpeg", alt: "Cheese Pull" },
+    { id: 5, src: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&auto=format&fit=crop", alt: "Paneer Tikka Pizza" },
+    { id: 6, src: "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800&auto=format&fit=crop", alt: "Cheesy Veg Pizza" },
+    { id: 7, src: "https://images.unsplash.com/photo-1590947132387-155cc02f3212?w=800&auto=format&fit=crop", alt: "Spicy Indian Pizza" },
+    { id: 8, src: "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=800&auto=format&fit=crop", alt: "Woodfired Crust" },
+    { id: 9, src: "https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=800&auto=format&fit=crop", alt: "Delicious Slices" },
+    { id: 10, src: "https://images.unsplash.com/photo-1571407970349-bc10c62a4b41?w=800&auto=format&fit=crop", alt: "Chef Preparing Dough" },
+    { id: 11, src: "https://images.unsplash.com/photo-1579751626657-72bc17010498?w=800&auto=format&fit=crop", alt: "Fresh Ingredients" },
+    { id: 12, src: "https://images.unsplash.com/photo-1588315029754-2dd089d39a1a?w=800&auto=format&fit=crop", alt: "Hot Pizza from Oven" },
+    { id: 13, src: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&auto=format&fit=crop", alt: "Restaurant Ambience" },
+    { id: 14, src: "https://images.unsplash.com/photo-1552566626-52f8b828add9?w=800&auto=format&fit=crop", alt: "Indian Restaurant Interior" },
 ];
 
 export const menuData = [

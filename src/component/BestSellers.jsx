@@ -41,7 +41,7 @@ const bestSellers = [
     name: "Choco Brownie",
     price: "₹110",
     image:
-      "https://images.unsplash.com/photo-1606313564200-e75d5e30476d?q=80&w=1974&auto=format&fit=crop",
+      "https://www.recipetineats.com/uploads/2016/08/Brownies_0.jpg",
     tag: "SWEET ENDING",
     desc: "Gooey warm chocolate to finish the feast.",
   },
